@@ -1,7 +1,8 @@
 # Bayesian approach and extreme value theory in economic analysis of forestry projects
 Research project in which the objective was to use Bayesian approach and EVT to estimate
 future price and yield to carry out an economic evaluation of a forestry project.\
-This study is published in Forest Policy and Economics. All details about methodology and results
+This study is published in Forest Policy and Economics.
+All details about methodology and results
 are on [https://doi.org/10.1016/j.forpol.2019.05.021](https://doi.org/10.1016/j.forpol.2019.05.021)\
 The R_script contains the execution of the project.
 
