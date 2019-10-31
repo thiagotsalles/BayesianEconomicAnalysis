@@ -1,0 +1,25 @@
+
+    model{
+    
+    # PRIOR DISTRIBUTIONS
+    b0 ~ dnorm(6.8026, 3.3033)
+    b1 ~ dnorm(5.7388, 1.2481)
+    tau2 ~ dgamma(0.001, 0.001)
+    
+    # MODEL
+    for(i in 1 : n.bayes) {
+    y[i] ~ dnorm(mu[i], tau2)
+    mu[i] <- exp(b0 - b1 / x[i])
+    }
+    
+    # ESTIMATES FOR WEIGHT
+    for(i in 1 : 6) {
+    yp[i] <- exp(b0 - b1 / ages[i])
+    }
+
+    # R2B CALCULATION
+    sigma2 <- 1 / tau2
+    sy2 <- pow(sd(y[]), 2)
+    R2B <- 1 - sigma2 / sy2
+
+    }

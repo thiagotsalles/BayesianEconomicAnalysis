@@ -1,0 +1,18 @@
+
+    model {
+    
+    # PRIOR DISTRIBUTIONS
+    alpha ~ dnorm(0.0, 0.000001)
+    beta ~ dnorm(0.0, 0.000001)
+    
+    # LIKELIHOOD
+    for (i in 1:n) {
+    y[i] ~ dgumbel(alpha, beta)
+    }
+    
+    # PREDICTIVE
+    for(i in 2:6) {
+    max_p[i] <- alpha - beta * log(-log(1 - (1 / i)))
+    }
+    
+    }
